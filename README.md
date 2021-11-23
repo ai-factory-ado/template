@@ -8,3 +8,4 @@ Please follow the steps below to use it:
 * Navigate to https://azuredevopsdemogenerator.azurewebsites.net/environment/createproject
 * Click on "Choose Template" and click on the "Private" tab
 * Choose the "Github" option and enter the following url: https://github.com/ai-factory-ado/template-ado/blob/main/files/ai-factory-template.zip
+* Enter the information on the next page to create a new project
