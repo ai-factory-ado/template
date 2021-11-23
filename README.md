@@ -13,7 +13,7 @@ Please follow the steps below to use it:
 ## 2. Update Project Information
 
 In the `project-template-file-batch` repo, replace the string `ai-factory` in the repositories section with the name of your Azure DevOps org in the files:
-* `controller/devops-pipelines/deploy-model-training-pipeline.yml` and 
+* `controller/devops-pipelines/deploy-model-training-pipeline.yml`
 * `controller/devops-pipelines/deploy-model-batch-scoring.yml`
 
 ## 3. Change Project Settings
