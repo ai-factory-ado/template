@@ -17,13 +17,15 @@ In the `project-template-file` repo, replace the string `ai-factory` in the repo
 * `controller/devops-pipelines/deploy-model-batch-scoring.yml`
 * `controller/devops-pipelines/deploy-model-to-aks.yml`
 
-## 3. Change Project Settings
+## 3. Change Organization and Project Settings
 
 Navigate to Project settings and change the following settings under the Pipeline section:
 
 ![image](https://user-images.githubusercontent.com/26466075/143133733-4eb5e7b7-f78d-40b5-9f4e-0dc8f8860562.png)
 
-*Note: If this setting is greyed out, then this setting will first need to be changed in the Github organisation's settings and then at project level
+*Note: If this setting is greyed out, then this setting will first need to be changed in the Github organisation's settings and then at project level. If this is the case, then navigate to the Azure DevOps Organization's settings and change the following 3 settings under the Pipeline section:
+
+![image](https://user-images.githubusercontent.com/26466075/143460635-f1986c97-4c18-4ca3-9d2b-cf014e942676.png)
 
 ## 4. Set up Azure Key Vault
 
@@ -48,10 +50,11 @@ NOTE: If your subscription name has a space in it, put quotes `""` around your s
 
 * The "Link secrets from an Azure Key Vault as variables" button should be set and the variable group should be linked to the Azure Key Vault created in step 1. Once it it has been linked, all the secrets created above should be added as variables in this variable group.
 
-* Go to the Azure DevOps organization's settings and grant "Create new projects" permission to the build service for the new project. The name of this account should be "azure devops project name Build Service"
+* Go to the Azure DevOps organization's settings and grant "Create new projects" permission to the Project Collection Build Service account. The name of this account should be "Project Collection Build Service"
  
-![image](https://user-images.githubusercontent.com/26466075/143448887-3478e635-5fb0-49b5-9ada-a1df8e67bf66.png)
-![image](https://user-images.githubusercontent.com/26466075/143449052-2a6f5f8e-89a5-4c1b-829f-40178d2ab480.png)
+![image](https://user-images.githubusercontent.com/26466075/143461344-36b80b1f-a4f1-432a-91eb-32a8aa53a358.png)
+![image](https://user-images.githubusercontent.com/26466075/143461221-9cef8156-ce28-4eee-b592-6c2cf4083361.png)
+
 
 ## 6. Update parameters for the pipeline
 
