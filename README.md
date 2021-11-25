@@ -57,7 +57,6 @@ Go to the file named `/azuredevops/pipelines/project-variables.yml` in the `boot
 
 The most important parameter for in this file is the path for the project template. This is the path for the project template repo, which is one of the repos that created in the first step. 
 
-Following is an example:
 ![image](https://user-images.githubusercontent.com/26466075/143450936-08db7633-f727-4c39-b78c-34f1481776fd.png)
 
 ## 7. Pipeline Run
