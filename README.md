@@ -23,6 +23,8 @@ Navigate to Project settings and change the following settings under the Pipelin
 
 ![image](https://user-images.githubusercontent.com/26466075/143133733-4eb5e7b7-f78d-40b5-9f4e-0dc8f8860562.png)
 
+*Note: If this setting is greyed out, then this setting will first need to be changed in the Github organisation's settings and then at project level
+
 ## 4. Set up Azure Key Vault
 
 This repo requires a number of secrets to create various artefacts in Azure, Azure DevOps and GitHub. In order to keep the secrets secure, an Azure Key Vault with the following secrets needs to be created:
