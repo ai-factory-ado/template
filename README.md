@@ -53,11 +53,20 @@ NOTE: If your subscription name has a space in it, put quotes `""` around your s
 
 ## 6. Update parameters for the pipeline
 
-Go to the file named `/azuredevops/pipelines/project-variables.yml` in the `bootstrap` repo in the GitHub update the variable values as per your requirements. This file defines how your first ML project should look like.
+Go to the file named `/azuredevops/pipelines/project-variables.yml` in the `bootstrap` repo in the project and update the variable values as per your requirements. The parameters in this file are used to provision an Azure DevOps project and related artefacts for the new project.
+
+The most important parameter for in this file is the path for the project template. This is the path for the project template repo, which is one of the repos that created in the first step. 
+
+Following is an example:
+![image](https://user-images.githubusercontent.com/26466075/143450936-08db7633-f727-4c39-b78c-34f1481776fd.png)
 
 ## 7. Pipeline Run
 
 Once you commit the `project-variables.yml` file, it should run the bootstrap pipeline. Please note that the first run of the pipeline will request for permission to access the Azure Subscription in order to access the Key Vault. 
+
+
+![image](https://user-images.githubusercontent.com/26466075/143451462-acd83e32-378d-4f62-b368-388340a1de36.png)
+
 
 Some notes:
 
