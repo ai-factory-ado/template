@@ -12,9 +12,10 @@ Please follow the steps below to use it:
 
 ## 2. Update Project Information
 
-In the `project-template-file-batch` repo, replace the string `ai-factory` in the repositories section with the name of your Azure DevOps org in the files:
+In the `project-template-file` repo, replace the string `ai-factory` in the repositories section with the name of your Azure DevOps org in the files:
 * `controller/devops-pipelines/deploy-model-training-pipeline.yml`
 * `controller/devops-pipelines/deploy-model-batch-scoring.yml`
+* `controller/devops-pipelines/deploy-model-to-aks.yml`
 
 ## 3. Change Project Settings
 
@@ -45,10 +46,10 @@ NOTE: If your subscription name has a space in it, put quotes `""` around your s
 
 * The "Link secrets from an Azure Key Vault as variables" button should be set and the variable group should be linked to the Azure Key Vault created in step 1. Once it it has been linked, all the secrets created above should be added as variables in this variable group.
 
-* Go to the Azure DevOps organization's settings and grant "Create new projects" permission to the build service for the new project. The name of this account should be "<azure devops project name> Build Service"
+* Go to the Azure DevOps organization's settings and grant "Create new projects" permission to the build service for the new project. The name of this account should be "azure devops project name Build Service"
  
-![image](https://user-images.githubusercontent.com/26466075/143135127-bcfbc8af-0302-4edb-84af-5f1c45a702f9.png)
-![image](https://user-images.githubusercontent.com/26466075/143135155-116eb2f3-87e2-4d06-81ae-d5554cf232fb.png)
+![image](https://user-images.githubusercontent.com/26466075/143448887-3478e635-5fb0-49b5-9ada-a1df8e67bf66.png)
+![image](https://user-images.githubusercontent.com/26466075/143449052-2a6f5f8e-89a5-4c1b-829f-40178d2ab480.png)
 
 ## 6. Update parameters for the pipeline
 
