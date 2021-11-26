@@ -76,5 +76,4 @@ Some notes:
 
 * It is hard to get all the permissions right in the first go, so it'll be very surprising if the pipeline succeeds in the first go.
 * If not, then please look for the errors and fix them. The pipeline will eventually run once everything is in place.
-* There's another catch, even if the pipeline is successful, the steps that create the GitHub repos return an error in spite of them running successfully. This seems like a GitHub CLI issue and we haven't investigated enough on this. Having said that, the pipeline will run fine in spite of those errors. 
 
