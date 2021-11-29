@@ -12,7 +12,7 @@ Please follow the steps below to use it:
 
 ## 2. Update Project Information
 
-In the `project-template-file` repo, replace the string `ai-factory` in the repositories section with the name of your Azure DevOps org in the files:
+In the `project-template-file` repo, replace the string `ai-factory` in the repositories section with the name of your Azure DevOps project created above in the files:
 * `controller/devops-pipelines/deploy-model-training-pipeline.yml`
 * `controller/devops-pipelines/deploy-model-batch-scoring.yml`
 * `controller/devops-pipelines/deploy-model-to-aks.yml`
