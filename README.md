@@ -3,21 +3,23 @@ This project template provides a simplified, reusable MLOps template for Azure M
 
 Please follow the steps below to use it:
 
-## 1. Create a new Azure DevOps project
+## 1. AI Factory Setup
+
+## 1.1 Create a new Azure DevOps project
 
 * Navigate to https://azuredevopsdemogenerator.azurewebsites.net/environment/createproject
 * Click on "Choose Template" and click on the "Private" tab
 * Choose the "Github" option and enter the following url: https://github.com/ai-factory-ado/template/blob/main/files/ai-factory-template.zip
 * Enter the information on the next page to create a new project
 
-## 2. Update Project Information
+## 1.2 Update Project Information
 
 In the `project-template-file` repo, replace the string `ai-factory` in the repositories section with the name of your Azure DevOps project created above in the files:
 * `controller/devops-pipelines/deploy-model-training-pipeline.yml`
 * `controller/devops-pipelines/deploy-model-batch-scoring.yml`
 * `controller/devops-pipelines/deploy-model-to-aks.yml`
 
-## 3. Change Organization and Project Settings
+## 1.3 Change Organization and Project Settings
 
 Navigate to Project settings and change the following settings under the Pipeline section:
 
@@ -27,7 +29,7 @@ Navigate to Project settings and change the following settings under the Pipelin
 
 ![image](https://user-images.githubusercontent.com/26466075/143460635-f1986c97-4c18-4ca3-9d2b-cf014e942676.png)
 
-## 4. Set up Azure Key Vault
+## 1.4 Set up Azure Key Vault
 
 This repo requires a number of secrets to create various artefacts in Azure, Azure DevOps and GitHub. In order to keep the secrets secure, an Azure Key Vault with the following secrets needs to be created:
 
@@ -44,7 +46,7 @@ After adding all the settings, your Key Vault Secrets should look like this:
 
 NOTE: If your subscription name has a space in it, put quotes `""` around your subscription name for the AZURE-RM-SUBSCRIPTION-NAME-DEV secret. Else, the pipeline will fail.
 
-## 5. Set up for the bootstrap Pipeline
+## 1.5 Set up for the bootstrap Pipeline
 
 * Create a variable group named **`bootstrap-variables-kv`** (under `Pipelines` --> `Library`). The YAML pipeline definitions in this repository refer to this variable group by name.
 
@@ -56,7 +58,7 @@ NOTE: If your subscription name has a space in it, put quotes `""` around your s
 ![image](https://user-images.githubusercontent.com/26466075/143461221-9cef8156-ce28-4eee-b592-6c2cf4083361.png)
 
 
-## 6. Update parameters for the pipeline
+## 1.6 Update parameters for the pipeline
 
 Go to the file named `/azuredevops/pipelines/project-variables.yml` in the `bootstrap` repo in the project and update the variable values as per your requirements. The parameters in this file are used to provision an Azure DevOps project and related artefacts for the new project.
 
@@ -64,16 +66,36 @@ The most important parameter for in this file is the path for the project templa
 
 ![image](https://user-images.githubusercontent.com/26466075/143450936-08db7633-f727-4c39-b78c-34f1481776fd.png)
 
-## 7. Pipeline Run
+## 1.7 Pipeline Run
 
 Once you commit the `project-variables.yml` file, it should run the bootstrap pipeline. Please note that the first run of the pipeline will request for permission to access the Azure Subscription in order to access the Key Vault. 
 
 
 ![image](https://user-images.githubusercontent.com/26466075/143451462-acd83e32-378d-4f62-b368-388340a1de36.png)
 
-
 Some notes:
 
 * It is hard to get all the permissions right in the first go, so it'll be very surprising if the pipeline succeeds in the first go.
 * If not, then please look for the errors and fix them. The pipeline will eventually run once everything is in place.
 
+## 2 Project Setup
+
+## 2.1 Update project settings
+
+Navigate to Project settings and change the following settings under the Pipeline section:
+
+![image](https://user-images.githubusercontent.com/26466075/143133733-4eb5e7b7-f78d-40b5-9f4e-0dc8f8860562.png)
+
+## 2.2 Run the IAC pipeline
+
+Navigate to "iac/pipelines/iac-variables.yml" and update the variables to provide parameters for the ARM template deployment of the Azure Machine Learning workspace and associated resources. 
+
+Once you commit the file, the IAC pipeline should get triggered.
+
+## 2.3 Run the Training pipeline
+
+Navigate to controller/controller-config.yml and update the workspace, resource group name. The remaining settings can be left unchanged for the initial deployment of the sample project. These settings can be changed subsequently once the Data Science code has been written. 
+
+## 2.4 Run the Batch Scoring / AKS deployment pipeline
+
+Depending on the use case, run the Batch Scoring pipeline for batch scenarios and AKS deployment pipeline for realtime scenarios. 
