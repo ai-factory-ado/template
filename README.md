@@ -48,7 +48,7 @@ NOTE: If your subscription name has a space in it, put quotes `""` around your s
 
 * Create a variable group named **`bootstrap-variables-kv`** (under `Pipelines` --> `Library`). The YAML pipeline definitions in this repository refer to this variable group by name.
 
-* The "Link secrets from an Azure Key Vault as variables" button should be set and the variable group should be linked to the Azure Key Vault created in step 1. Once it it has been linked, all the secrets created above should be added as variables in this variable group.
+* The "Link secrets from an Azure Key Vault as variables" button should be set and the variable group should be linked to the Azure Key Vault created in the previous step. Once it it has been linked, all the secrets created above should be added as variables in this variable group.
 
 * Go to the Azure DevOps organization's settings and grant "Create new projects" permission to the Project Collection Build Service account. The name of this account should be "Project Collection Build Service"
  
