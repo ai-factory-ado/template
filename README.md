@@ -80,6 +80,8 @@ Some notes:
 
 ## 2 Project Setup
 
+The bootstrap pipeline in the AI Factory project will create a new Azure DevOps project called "Project-projectname". The project name comes from the parameter file, and the default value is mnist. We will be working in this new project from this point onwards. 
+
 ### 2.1 Update project settings
 
 Navigate to Project settings and change the following settings under the Pipeline section:
